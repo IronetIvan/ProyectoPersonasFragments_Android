@@ -10,15 +10,15 @@
     <fragment
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="0.2"
-        android:id="@+id/fragment_estatico"
+        android:layout_weight="0.1"
+        android:id="@+id/fragmentEstatico"
         class="com.example.proyectopersonas.fragments.FragmentCabecera"></fragment>
 
     <FrameLayout
         android:id="@+id/sitio_fragments"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="0.8">
+        android:layout_weight="0.9">
 
         <TextView
             android:layout_width="match_parent"

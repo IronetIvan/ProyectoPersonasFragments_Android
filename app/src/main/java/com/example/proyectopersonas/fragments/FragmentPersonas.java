@@ -8,16 +8,20 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.proyectopersonas.R;
 
 public class FragmentPersonas extends Fragment {
 
+    private RecyclerView recyclerPersonas;
+    private View view;
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.layout_fragment_personas, container, false);
+        view = inflater.inflate(R.layout.layout_fragment_personas, container, false);
 
-        return v;
+        return view;
     }
 }
