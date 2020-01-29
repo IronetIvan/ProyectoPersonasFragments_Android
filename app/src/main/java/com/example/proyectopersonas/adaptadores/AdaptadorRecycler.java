@@ -16,12 +16,19 @@ import com.example.proyectopersonas.utils.Persona;
 import java.util.ArrayList;
 
 public class AdaptadorRecycler extends RecyclerView.Adapter<AdaptadorRecycler.MiHolder> {
-    ArrayList<Persona> listaPersonas;
-    Context contexto;
+    private ArrayList<Persona> listaPersonas;
+    private Context contexto;
+    private OnRecyclerListener listener;
 
     public AdaptadorRecycler(ArrayList<Persona> listaPersonas, Context contexto) {
         this.listaPersonas = listaPersonas;
         this.contexto = contexto;
+
+        try{
+            listener = (OnRecyclerListener) contexto;
+        }catch (ClassCastException e){
+
+        }
     }
 
     @NonNull
@@ -35,11 +42,21 @@ public class AdaptadorRecycler extends RecyclerView.Adapter<AdaptadorRecycler.Mi
     public void onBindViewHolder(@NonNull MiHolder holder, int position) {
         final Persona persona = listaPersonas.get(position);
         holder.getImagen().setImageResource(persona.getImagen());
+        holder.getBoton().setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                listener.onPersonaSelected(persona);
+            }
+        });
     }
 
     @Override
     public int getItemCount() {
         return listaPersonas.size();
+    }
+
+    public interface OnRecyclerListener{
+        void onPersonaSelected(Persona persona);
     }
 
     class MiHolder extends RecyclerView.ViewHolder{

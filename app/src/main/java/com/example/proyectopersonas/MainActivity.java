@@ -8,9 +8,12 @@ import androidx.fragment.app.FragmentTransaction;
 import android.os.Bundle;
 import android.widget.FrameLayout;
 
+import com.example.proyectopersonas.adaptadores.AdaptadorRecycler;
+import com.example.proyectopersonas.fragments.FragmentDetalle;
 import com.example.proyectopersonas.fragments.FragmentPersonas;
+import com.example.proyectopersonas.utils.Persona;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements AdaptadorRecycler.OnRecyclerListener {
     FrameLayout layout;
 
     @Override
@@ -32,5 +35,14 @@ public class MainActivity extends AppCompatActivity {
 
     private void instancias() {
         layout = findViewById(R.id.sitio_fragments);
+    }
+
+
+    @Override
+    public void onPersonaSelected(Persona persona) {
+        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+        ft.replace(R.id.sitio_fragments, new FragmentDetalle());
+        ft.addToBackStack(null);
+        ft.commit();
     }
 }
