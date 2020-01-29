@@ -38,6 +38,7 @@ public class MainActivity extends AppCompatActivity implements AdaptadorRecycler
     }
 
 
+
     @Override
     public void onPersonaSelected(Persona persona) {
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
