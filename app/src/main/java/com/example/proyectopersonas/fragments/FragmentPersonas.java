@@ -17,11 +17,17 @@ public class FragmentPersonas extends Fragment {
     private RecyclerView recyclerPersonas;
     private View view;
 
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.layout_fragment_personas, container, false);
-
+        recyclerPersonas = view.findViewById(R.id.recycler_personas);
         return view;
+    }
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
     }
 }
