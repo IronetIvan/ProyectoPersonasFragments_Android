@@ -5,6 +5,11 @@
     android:layout_width="200dp"
     android:layout_height="200dp"
     app:cardCornerRadius="30dp">
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        />
 <ImageView
     android:layout_width="150dp"
     android:layout_height="150dp"

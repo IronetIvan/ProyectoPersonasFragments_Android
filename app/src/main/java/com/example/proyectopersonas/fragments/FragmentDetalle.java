@@ -30,6 +30,7 @@ public class FragmentDetalle extends Fragment {
     @Override
     public void onAttach(Context context) {
 
+        super.onAttach(context);
         Persona persona = (Persona) this.getArguments().get("persona");
     }
 
